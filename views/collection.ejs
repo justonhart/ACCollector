@@ -1,0 +1,97 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title><%=  username%>'s collection</title>
+    <link rel="stylesheet" href="collections.css">
+</head>
+<body>
+
+    <% if(canEdit) {%>
+        <h1>Manage your collection</h1>
+        <p>Click on an item to add to/remove from your collection</p>
+        <div id="viewSelectorPanel">
+            <button id="songSelector" class="selected-view">Songs</button>
+            <button id="fossilSelector">Fossils</button>
+            <button id="artSelector">Art</button>
+        </div>
+        <div class="viewContainer">
+            <div class="collection song">
+                <% for(i in collection) {%>
+                    <% if(collection[i].item_type === 'song') {%>
+                        <% if(collection[i].owned) {%>
+                            <p class="owned"><%= collection[i].item_name %></p>
+                        <% } else {%>
+                            <p><%= collection[i].item_name %></p>
+                        <% }%>
+                    <% } %>
+                <% }%>
+            </div>
+            <div class="collection fossil hiddenView">
+                <% for(i in collection) {%>
+                    <% if(collection[i].item_type === 'fossil') {%>
+                        <% if(collection[i].owned) {%>
+                            <p class="owned"><%= collection[i].item_name %></p>
+                        <% } else {%>
+                            <p><%= collection[i].item_name %></p>
+                        <% }%>
+                    <% }%>
+                <% }%>
+            </div>
+            <div class="collection art hiddenView">
+                <% for(i in collection) {%>
+                    <% if(collection[i].item_type === 'art') {%>
+                        <% if(collection[i].owned) {%>
+                            <p class="owned"><%= collection[i].item_name %></p>
+                        <% } else {%>
+                            <p><%= collection[i].item_name %></p>
+                        <% }%>
+                    <% }%>
+                <% }%>
+            </div>
+        </div>
+        <a href="/dashboard">Return to dashboard</a>
+        <button id="saveButton" type="button">Save changes</button>
+        <script src="scripts/collectionManagement.js"></script>
+
+    <% } else {%>
+        <h1> <%= username %>'s needs:</h1>
+        
+        <div id="viewSelectorPanel">
+            <button id="songSelector" class="selected-view">Songs</button>
+            <button id="fossilSelector">Fossils</button>
+            <button id="artSelector">Art</button>
+        </div>
+        <div class="viewContainer">
+            <div class="collection song">
+                <% for(i in needs) {%>
+                    <% if(needs[i].item_type === 'song') {%>
+                        <% if(needs[i].canProvide) {%>
+                            <p class="canProvide"><%= needs[i].item_name %></p>
+                        <% } else {%>
+                            <p><%= needs[i].item_name %></p>
+                        <% }%>
+                    <% }%>
+                <% }%>
+            </div>
+            <div class="collection fossil hiddenView">
+                <% for(i in needs) {%>
+                    <% if(needs[i].item_type === 'fossil') {%>
+                        <p><%= needs[i].item_name %></p>
+                    <% }%>
+                <% }%>
+            </div>
+            <div class="collection art hiddenView">
+                <% for(i in needs) {%>
+                    <% if(needs[i].item_type === 'art') {%>
+                        <p><%= needs[i].item_name %></p>
+                    <% } %>
+                <% }%>
+            </div>
+        </div>
+        <a href="/dashboard">Return to dashboard</a>
+        <script src="scripts/collectionViewing.js"></script>
+    <% }%>
+    
+</body>
+</html>

@@ -1,0 +1,32 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Register</title>
+    <link rel="stylesheet" href="styleform.css">
+</head>
+<body>
+    <h1>Register to use ACCollector!</h1>
+    Use only alphanumeric characters (A-Z, a-z, 0-9)
+    <form action="/register-join" method="POST">
+        <p>Enter your information</p> 
+        <% if (messages.error) { %> 
+            <%= messages.error %> 
+        <% }%>
+        <input type="text" name="username" id="username" placeholder="Enter your desired username" required>
+        <input type="password" name="password" id="password" placeholder="Enter your desired password" required>
+        <input type="text" name="charname" id="charname" placeholder="Enter your character name" required>
+        <p>Enter the username and password of the already-registered user on your island</p>
+        <input type="text" name="otheruser" id="otheruser" placeholder="Their username" required>
+        <input type="password" name="otherpass" id="otherpass" placeholder="Their password" required>
+        <button type="submit">Register</button>
+    </form>
+
+    <small>
+        Usernames must be 3 - 16 characters long
+        <br>Passwords must be 6 - 50 characters long
+        <br>Character Names must be 1 - 16 characters long
+        <br>Island Names must be 1 - 10 characters long
+    </small>
+</body>
+</html>

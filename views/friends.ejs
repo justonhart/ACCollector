@@ -1,0 +1,32 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Friends</title>
+    <link rel="stylesheet" href="internal.css">
+</head>
+<body>
+    <h1>Your friends</h1>
+    <% if(friends.length) {%>
+        <div id="friendsContainer">
+            <% for(f of friends) {%>
+                <a class="friendsAnchor" href="/collection?user=<%=f%>"><%=f%></a>
+            <% }%>
+        </div>
+    <% } else {%>
+        <p>You currently have no friends. Add some using the button below!</p>
+    <% }%>
+
+    <button id="addButton">Add friend</button>
+    <div id="popup" hidden>
+        <form action="/friends/add" method="POST" id="addFriend">
+            <p>Enter the username of the player you want to add</p>
+            <input type="text" name="addUsername" placeholder="Username">
+            <button type="submit">Submit</button>
+            <button id="cancelButton" type="button">Cancel</button>
+        </form>
+    </div>
+
+    <script src="scripts/friends.js"></script>
+</body>
+</html>

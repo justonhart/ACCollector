@@ -1,0 +1,139 @@
+
+
+
+body{
+    background-color: rgb(223, 253, 216);
+    text-align: center;
+}
+
+#viewSelectorPanel{
+    display: none;
+}
+
+.viewContainer{
+    display: flex;
+    justify-content: center;
+    padding-bottom: 10px;
+}
+
+.collection{
+    width: 25vw;
+    height: 70vh;
+    background-color: rgb(229, 229, 252);
+    border: solid;
+    border-color: black;
+    border-radius: 5px;
+    border-width: 0px;
+    box-shadow: 0px 0px 18px -2px rgba(0,0,0,0.75);
+    overflow-y: scroll;
+    overflow-x: hidden;
+    margin: 5px 15px 0 15px;
+}
+
+.collection p{
+    text-align: left;
+    padding-left: 10px;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 18pt;
+    margin: 0 0 0 0;
+    border: solid;
+    border-color: black;
+    border-width: 0 0 1px 0;
+    user-select: none;
+}
+
+.canProvide{
+    background-color: rgb(253, 253, 199);
+}
+
+.owned{
+    background-color: rgb(167, 248, 171);
+}
+
+.selected-remove{
+    background-color: rgb(255, 160, 160);
+}
+
+.selected-add{
+    background-color: rgb(245, 238, 176);
+}
+
+h1{
+    margin-top: 5vh;
+}
+
+a{
+    font-size: 20px;
+    padding: 2px 8px 2px 8px;
+    background-color: rgb(213, 238, 253);
+    border: solid;
+    border-color: black;
+    border-radius: 3px;
+    border-width: 1px;
+    text-decoration: none;
+    width: fit-content;
+    color: black;
+}
+
+a:visited{
+    font-size: 20px;
+    padding: 10px 8px 2px 8px;
+    background-color: rgb(213, 238, 253);
+    border: solid;
+    border-color: black;
+    border-radius: 3px;
+    border-width: 1px;
+    text-decoration: none;
+    width: fit-content;
+    color: black;
+}
+
+button{
+    font-size: 20px;
+    padding: 2px 8px 2px 8px;
+    background-color: rgb(213, 238, 253);
+    border: solid;
+    border-color: black;
+    border-radius: 3px;
+    border-width: 1px;
+    text-decoration: none;
+    width: fit-content;
+}
+
+@media screen and (orientation:portrait){
+
+    #viewSelectorPanel{
+        display: block;
+    }
+
+    .collection{
+        width: 75vw;
+        height: 70vh;
+        background-color: rgb(229, 229, 252);
+        border: solid;
+        border-color: black;
+        border-radius: 5px;
+        border-width: 0px;
+        box-shadow: 0px 0px 18px -2px rgba(0,0,0,0.75);
+        overflow-y: scroll;
+        overflow-x: hidden;
+        margin: 5px 15px 0 15px;
+    }
+
+    .selected-view{
+        background-color: rgb(245, 238, 176);
+    }
+
+    .collection p{
+        padding-top: 5px;
+        padding-bottom: 5px;
+    }
+
+    .hiddenView{
+        display: none;
+    }
+
+    a{
+        display: none;
+    }
+}

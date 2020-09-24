@@ -1,0 +1,20 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    <link rel="stylesheet" href="styleform.css">
+</head>
+<body>
+    <h1>Welcome Back!</h1>
+    <form action="/login" method="POST">
+        <% if (messages.error) { %> 
+            <%= messages.error %> 
+        <% }%>
+        <input type="text" name="username" id="username" placeholder="Enter your username" required>
+        <input type="password" name="password" id="password" placeholder="Enter your password" required>
+        <button type="submit">Login</button>
+    </form>
+    <a href="/register">Create Account</a>
+</body>
+</html>
